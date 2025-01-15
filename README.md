@@ -4,6 +4,7 @@
 - Inside curly braces we state actions to be performed and provide pattern/condition outside.
 
  * Terms used in awk *
+
 - NR :- no or rows/record
 - NF :- no of fields
 - $0 :- print everything
