@@ -3,7 +3,7 @@
 - AWK is a powerful scripting language and command-line tool used for text processing and data extraction in Unix/Linux environments. Columns contents are fields for awk. awk will scan each line in file and give us required output.
 - Inside curly braces we state actions to be performed and provide pattern/condition outside.
 
- * Terms used in awk
+ * Terms used in awk *
 - NR :- no or rows/record
 - NF :- no of fields
 - $0 :- print everything
