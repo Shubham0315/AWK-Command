@@ -5,16 +5,16 @@
 
 **Terms used in awk**
 
-_- NR :- no or rows/record
+- NR :- no or rows/record
 - NF :- no of fields
 - $0 :- print everything
-- $1, $2 :- field no_
+- $1, $2 :- field no
 
 - The file on which the awk command operations are performed looks like below:-
 
 - ![image](https://github.com/user-attachments/assets/f5110e68-a8c7-41f7-9af4-3febf96cb247)
 
-_1. Print only a given column_
+*_1. Print only a given column_*
 - Command :- awk '{print $4}' data.sh
 
 - ![image](https://github.com/user-attachments/assets/76e862c5-c2e3-4ff2-b43e-21b289662981)
