@@ -5,10 +5,10 @@
 
 **Terms used in awk**
 
-- NR :- no or rows/record
+_- NR :- no or rows/record
 - NF :- no of fields
 - $0 :- print everything
-- $1, $2 :- field no
+- $1, $2 :- field no_
 
 - The file on which the awk command operations are performed looks like below:-
 
