@@ -121,6 +121,19 @@ _**Use cases of awk in Linux System**_
 
 ![image](https://github.com/user-attachments/assets/c3c78bc0-1184-4d59-80bf-7ecc6e048ef3)
 
+- If we don't want the blank line at start or any other line, we can state that in command i.e. exclude the line
+- Command :- ls -lrt | awk 'NR>1 {print $NF}'   #Instead of NF we can also give columnn no.
+
+![image](https://github.com/user-attachments/assets/aaaaf49b-010a-44db-b30c-d2e771386a21)
+
+2. To read logs in given range of time frame
+- Command :- less /var/logs/messages | awk '$3>="1:00:00" && $3>="1:00:00"'    #3 is column no where the time is
+- If we have to take logs from 1.00.00 to 1.00.01, use above command specifying the file name.
+
+3. List the files modified in specific month
+- Command :- ls -lrt | awk '$6==Oct'
+
+4. 
 
 
 
