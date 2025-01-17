@@ -119,7 +119,7 @@ _**Use cases of awk in Linux System**_
 1. To get list of files
 - Command :- ls -lrt | awk '{print $9}'
 
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/c3c78bc0-1184-4d59-80bf-7ecc6e048ef3)
 
 
 
