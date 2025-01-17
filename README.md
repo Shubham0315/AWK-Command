@@ -133,7 +133,31 @@ _**Use cases of awk in Linux System**_
 3. List the files modified in specific month
 - Command :- ls -lrt | awk '$6==Oct'
 
-4. 
+4. To replace a word
+- Command :- awk '{gsub("Kore","Shubham); print $0}' data.txt
+- "gsub" means "Global Substitute" to replace some word by new word and then we can print the whole file using $0 or customize the columns as required
+
+![image](https://github.com/user-attachments/assets/28ddc41b-240a-4c8b-a645-9df77fce86de)
+
+5. Find length of line/field
+- Lets print no of characters in specific column (name). Here "length" function is used.
+- Command :- awk '{print length($2)}' data.txt
+
+![image](https://github.com/user-attachments/assets/b326959f-1e5f-4d62-a7e4-db14866c9ea9)
+![image](https://github.com/user-attachments/assets/56aa984e-3b74-4bb9-9675-f5881a72da3a)
 
 
+6. Check index/position of word in line
+- Here we can use "index" function
+
+7. Print values in upper or lower case
+- Command :- awk '{print toupper($2)}' data.txt
+
+![image](https://github.com/user-attachments/assets/0267d58e-8027-4ca5-be79-318d074466e9)
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+_**Awk Scripting Concepts**_
+
+- 
 
