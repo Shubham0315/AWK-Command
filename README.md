@@ -75,8 +75,51 @@ _**Terms used in awk**_
 
 ![image](https://github.com/user-attachments/assets/b46aae69-443c-4097-910f-1022d5654d29)
 
-12. 
+*12. Check if given character is present in column*
+- Command :- awk '$2 ~ /a/ {print $0}' data.txt
+- Lets say we've to take data from 2nd column which have "a" in it
 
+![image](https://github.com/user-attachments/assets/132ace2f-2baa-4bde-8850-b498a82714e1)
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+_**Working with CSV or different delimeter**_
+
+Below is the example of CSV file
+
+![image](https://github.com/user-attachments/assets/fd33e788-0ed6-4f7d-ba29-af3b197a32c4)
+
+
+*1. How to work with CSV File*
+- Command :-  awk -F, '{print $2}' emp.csv
+- Here we have to pass -F for all fields and , so that awk understands all fields are separated by commas
+
+![image](https://github.com/user-attachments/assets/52642876-c41b-4c52-abe3-cfe9f8e04b8b)
+
+*2. Print data of employees whose salary is more than 50000*
+- Command :- awk -F, '$NF>50000 {print $0}' emp.csv
+- $NF is for the no of fields
+
+![image](https://github.com/user-attachments/assets/b8bfd7b2-0554-4223-8794-9d2cfa2d460c)
+
+*3. File with multiple delimeter*
+- Below is the example of file with multi-delimeters like space, comma, colon,etc
+
+![image](https://github.com/user-attachments/assets/ec56589e-e081-4781-ac7f-0324461e39ed)
+
+- For field separator, always provide -F and then delimeters. Here how many delimeters we provide inside [] the file will get divided in those many parts and we can print the output accordingly column wise giving column numbers. Even if we miss any delimeter in file, the command will take the input accordingly.
+- Command :- awk -F[,:.:-] '{print $4, $2, $3, $1}' multiple_delimeter.txt
+
+ ![image](https://github.com/user-attachments/assets/1a68dedf-67e9-4ab3-a91f-0eba8a37ec4b)'
+
+ ----------------------------------------------------------------------------------------------------------------------------------------------
+
+_**Use cases of awk in Linux System**_
+
+1. To get list of files
+- Command :- ls -lrt | awk '{print $9}'
+
+![Uploading image.png…]()
 
 
 
