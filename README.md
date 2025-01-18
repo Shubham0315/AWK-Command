@@ -116,7 +116,7 @@ Below is the example of CSV file
 
 _**Use cases of awk in Linux System**_
 
-1. To get list of files
+*1. To get list of files*
 - Command :- ls -lrt | awk '{print $9}'
 
 ![image](https://github.com/user-attachments/assets/c3c78bc0-1184-4d59-80bf-7ecc6e048ef3)
@@ -126,20 +126,20 @@ _**Use cases of awk in Linux System**_
 
 ![image](https://github.com/user-attachments/assets/aaaaf49b-010a-44db-b30c-d2e771386a21)
 
-2. To read logs in given range of time frame
+*2. To read logs in given range of time frame*
 - Command :- less /var/logs/messages | awk '$3>="1:00:00" && $3>="1:00:00"'    #3 is column no where the time is
 - If we have to take logs from 1.00.00 to 1.00.01, use above command specifying the file name.
 
-3. List the files modified in specific month
+*3. List the files modified in specific month*
 - Command :- ls -lrt | awk '$6==Oct'
 
-4. To replace a word
+*4. To replace a word*
 - Command :- awk '{gsub("Kore","Shubham); print $0}' data.txt
 - "gsub" means "Global Substitute" to replace some word by new word and then we can print the whole file using $0 or customize the columns as required
 
 ![image](https://github.com/user-attachments/assets/28ddc41b-240a-4c8b-a645-9df77fce86de)
 
-5. Find length of line/field
+*5. Find length of line/field*
 - Lets print no of characters in specific column (name). Here "length" function is used.
 - Command :- awk '{print length($2)}' data.txt
 
@@ -147,10 +147,10 @@ _**Use cases of awk in Linux System**_
 ![image](https://github.com/user-attachments/assets/56aa984e-3b74-4bb9-9675-f5881a72da3a)
 
 
-6. Check index/position of word in line
+*6. Check index/position of word in line*
 - Here we can use "index" function
 
-7. Print values in upper or lower case
+*7. Print values in upper or lower case*
 - Command :- awk '{print toupper($2)}' data.txt
 
 ![image](https://github.com/user-attachments/assets/0267d58e-8027-4ca5-be79-318d074466e9)
@@ -159,39 +159,55 @@ _**Use cases of awk in Linux System**_
 
 _**Awk Scripting Concepts**_
 
-1. Use of Begin and End
+*1. Use of Begin and End*
 - We can give condition on how to begin and end the awk using this
 - Command :- awk 'BEGIN{print "----Employee Data----"} {print $0} END{print "----Ending the Table----"}' data.txt
 
 ![image](https://github.com/user-attachments/assets/f8e2c8f5-948d-4adf-9f00-9555cb0c60c4)
 
-2.  To find total of salary of all employees in table
+*2.  To find total of salary of all employees in table*
 - Command :- awk 'BEGIN{sum=0} {sum=sum+$NF} END{print "Sum of salary" : sum}' emp.csv
 
 ![image](https://github.com/user-attachments/assets/6cf2506e-952e-4295-872a-8ac1d447f159)
 
-3. To ignore headers/first row to count no. of users
+*3. To ignore headers/first row to count no. of users*
 - Command :- awk 'NR>1 {count++} END{print "Total employees are : ", count}' emp.csv
 
 ![image](https://github.com/user-attachments/assets/fa5dc04b-bc54-4f80-825e-8f3f5bdfc7c3)
 
-4. To find average salary
+*4. To find average salary*
 - Command :- awk -F, '{count++; sum=sum+$NF} END{print "Average Salary: " sum/count}' emp.csv
 
 ![image](https://github.com/user-attachments/assets/1cc9e6e1-b207-4c48-982b-2ba2353fc0b3)
 
-5. To get length of longest line
+*5. To get length of longest line*
 - length variable is used to find length as we know
 - The command will check length of each line and then using "max" variable it will check if the subsequent line's length is more than first, if yes it will print the longest line length.
 - Command :- awk '{if(length($0)>max)max=length($0)} END{print "Length of longest line is " max}' emp.csv
 
 ![image](https://github.com/user-attachments/assets/82df578a-7b72-4624-abd2-61290f07e3a9)
 
-6. If -else condition for salary
+*6. If -else condition for salary*
 - Lets print high for salary more than 50k else print low
 - Command :- awk -F, '{if($NF>50000)$7="High"; else $7="Low"; print $0}' emp.csv
 
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/6ef88f7d-0f07-4f99-936c-262a8675e400)
+
+*7. To find total salry of specific profession*
+- Command :- awk -F, '{if($5=="doctor")sum+=$NF} END{print "Total salary of doctor " sum}' emp.csv
+
+![image](https://github.com/user-attachments/assets/71eb7097-14f8-46ef-8395-bfe2e8aae609)
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+_**Awk Advanced Scripting Concepts**_
+
+*1. Conditions in a Script*
+- Create a file in which put the conditions for scripting and then run below command
+- Command :-  awk -f file.awk emp.csv
+- When we put conditions in a file we dont use semi-colons as new line is itself a separator.
+
+![image](https://github.com/user-attachments/assets/b7773188-e153-424e-8b00-b53f426a4dcc)
 
 
 
