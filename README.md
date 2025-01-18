@@ -159,5 +159,40 @@ _**Use cases of awk in Linux System**_
 
 _**Awk Scripting Concepts**_
 
-- 
+1. Use of Begin and End
+- We can give condition on how to begin and end the awk using this
+- Command :- awk 'BEGIN{print "----Employee Data----"} {print $0} END{print "----Ending the Table----"}' data.txt
+
+![image](https://github.com/user-attachments/assets/f8e2c8f5-948d-4adf-9f00-9555cb0c60c4)
+
+2.  To find total of salary of all employees in table
+- Command :- awk 'BEGIN{sum=0} {sum=sum+$NF} END{print "Sum of salary" : sum}' emp.csv
+
+![image](https://github.com/user-attachments/assets/6cf2506e-952e-4295-872a-8ac1d447f159)
+
+3. To ignore headers/first row to count no. of users
+- Command :- awk 'NR>1 {count++} END{print "Total employees are : ", count}' emp.csv
+
+![image](https://github.com/user-attachments/assets/fa5dc04b-bc54-4f80-825e-8f3f5bdfc7c3)
+
+4. To find average salary
+- Command :- awk -F, '{count++; sum=sum+$NF} END{print "Average Salary: " sum/count}' emp.csv
+
+![image](https://github.com/user-attachments/assets/1cc9e6e1-b207-4c48-982b-2ba2353fc0b3)
+
+5. To get length of longest line
+- length variable is used to find length as we know
+- The command will check length of each line and then using "max" variable it will check if the subsequent line's length is more than first, if yes it will print the longest line length.
+- Command :- awk '{if(length($0)>max)max=length($0)} END{print "Length of longest line is " max}' emp.csv
+
+![image](https://github.com/user-attachments/assets/82df578a-7b72-4624-abd2-61290f07e3a9)
+
+6. If -else condition for salary
+- Lets print high for salary more than 50k else print low
+- Command :- awk -F, '{if($NF>50000)$7="High"; else $7="Low"; print $0}' emp.csv
+
+![Uploading image.png…]()
+
+
+
 
